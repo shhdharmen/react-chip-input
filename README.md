@@ -4,10 +4,16 @@
 
 [![NPM](https://img.shields.io/npm/v/react-chip-input.svg)](https://www.npmjs.com/package/react-chip-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Pre-requisitions
+
+It is assumed that you have [react-bootstrap](https://react-bootstrap.github.io/getting-started/introduction#installation) installed.
+
 ## Install
 
 ```bash
-npm install --save react-chip-input
+npm i react-chip-input
+# or
+yarn add react-chip-input
 ```
 
 ## Usage
@@ -48,11 +54,11 @@ class Example extends React.Component {
 
 ```css
 /* Chip border color, defaults to bootstrap's var --primary */
---chip-border-color
-/* Chip :hover, :active, :focus background color, defaults to bootstrap's var --primary */
---chip-hover-color
+--react-chip-input__chip-border-color
+/* Chip :hover, :active, :focus background color, defaults to rgba(0, 0, 0, 0.05) */
+--react-chip-input__chip-hover-color
 /* Box shadow color, when active, defaults to bootstrap's var --primary */
---box-shadow-color
+--react-chip-input__box-shadow-color
 ```
 
 ## License

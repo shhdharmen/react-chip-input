@@ -37,7 +37,7 @@
     transform: translateX(10px);
     opacity: 0;
     padding: 2px 4px 3px 8px;
-    border: 1px solid var(--chip-border-color, var(--primary, blue));
+    border: 1px solid var(--react-chip-input__chip-border-color, var(--primary, blue));
     border-radius: 16px;
     height: 32px;
     transition: box-shadow 0.15s linear, background-color 0.15s linear;
@@ -46,7 +46,7 @@
 .chip-input .chip:hover,
 .chip-input .chip:focus,
 .chip-input .chip:active {
-    background-color: var(--chip-hover-color, rgba(0, 0, 0, 0.05));
+    background-color: var(--react-chip-input__chip-hover-color, rgba(0, 0, 0, 0.05));
 }
 
 .chip-input .chip.show {
@@ -74,7 +74,7 @@
 }
 
 .shadow-primary {
-    box-shadow: 0 0 0 0.2rem var(--box-shadow-color, var(--primary, blue));
+    box-shadow: 0 0 0 0.2rem var(--react-chip-input__box-shadow-color, var(--primary, blue));
 }
 
 .cursor-pointer {
