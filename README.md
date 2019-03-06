@@ -13,17 +13,46 @@ npm install --save react-chip-input
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import * as React from 'react';
 
-import MyComponent from 'react-chip-input'
+import ReactChipInput from 'react-chip-input';
 
 class Example extends React.Component {
-  render () {
+  state = {
+    chips: []
+  };
+  addChip = value => {
+    const chips = this.state.chips.slice();
+    chips.push(value);
+    this.setState({ chips });
+  };
+  removeChip = index => {
+    const chips = this.state.chips.slice();
+    chips.splice(index, 1);
+    this.setState({ chips });
+  };
+  render() {
     return (
-      <MyComponent />
-    )
+      <ReactChipInput
+        classes="class1 class2"
+        chips={this.state.chips}
+        onSubmit={value => this.addChip(value)}
+        onRemove={index => this.removeChip(index)}
+      />
+    );
   }
 }
+```
+
+## Style Variables
+
+```css
+/* Chip border color, defaults to bootstrap's var --primary */
+--chip-border-color
+/* Chip :hover, :active, :focus background color, defaults to bootstrap's var --primary */
+--chip-hover-color
+/* Box shadow color, when active, defaults to bootstrap's var --primary */
+--box-shadow-color
 ```
 
 ## License
