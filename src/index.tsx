@@ -8,26 +8,36 @@ import { ReactComponent as CloseIcon } from './baseline-close-24px.svg';
 
 import styles from './styles.css';
 
+/**Type of Input-Props */
 export type Props = {
-  text: string;
   /**Emits index */
   onRemove: Function;
+  /**Array of chips */
   chips: string[];
+  /**Extra classes */
   classes: string;
   /**Emits value */
   onSubmit: Function;
 };
 
 export default class ReactChipInput extends React.Component<Props> {
+  /**Ref object for input */
   formControlRef: any;
+  /**State of the component */
   state: { focused: boolean; exitingIndex: number } = {
+    /**Whether input is focused or not. Helps to highlight whole div. */
     focused: false,
+    /**When user removes any chip, we are playing an animation for 250ms.
+     * This index will help us to remove the chip actually after the same. */
     exitingIndex: -1
   };
   constructor(props: Readonly<Props>) {
     super(props);
     this.formControlRef = React.createRef();
   }
+  /**Called when user clicks on remove icon.
+   * And in turn, onRemove of props called, wih index passed as argument.
+   */
   removeChip = (index: number) => {
     this.setState({ exitingIndex: index });
     setTimeout(() => {
@@ -35,6 +45,7 @@ export default class ReactChipInput extends React.Component<Props> {
       this.setState({ exitingIndex: null });
     }, 250);
   };
+  /**When user double clicks on any chip, it will start editing. */
   editChip = (index: number) => {
     const chips = this.props.chips.slice();
     const editChipValue = chips[index];
@@ -44,14 +55,15 @@ export default class ReactChipInput extends React.Component<Props> {
     this.formControlRef.current.value = editChipValue;
     this.formControlRef.current.focus();
   };
+  /**This is needed, as chips array will get changed frequently. */
   componentWillReceiveProps(nextProps: Props) {
     if (this.props.chips.length < nextProps.chips.length) {
       this.formControlRef.current.value = '';
     }
   }
   render() {
-    // console.log(styles);
     return (
+      /**The main container div */
       <div
         className={[
           this.props.classes,
@@ -61,6 +73,7 @@ export default class ReactChipInput extends React.Component<Props> {
         ].join(' ')}
       >
         <Row className="align-items-center" noGutters>
+        {/* Each chip is bootstrap's col */}
           {this.props.chips.map((chip, index) => (
             <Col xs="auto" className="p-2" key={index}>
               <div
@@ -72,6 +85,7 @@ export default class ReactChipInput extends React.Component<Props> {
                 onDoubleClick={() => this.editChip(index)}
               >
                 {chip}
+                {/* The icon which helps user, if user wants to remove the chip */}
                 <CloseIcon
                   className={['ml-2', styles['cursor-pointer']].join(' ')}
                   onClick={() => this.removeChip(index)}
@@ -80,6 +94,7 @@ export default class ReactChipInput extends React.Component<Props> {
             </Col>
           ))}
           <Col xs>
+          {/* The input, from which value is read and chip is added accordingly */}
             <Form
               className="custom-form-control"
               onSubmit={(e: any) => {

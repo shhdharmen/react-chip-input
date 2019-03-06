@@ -3,6 +3,7 @@
 > Chip input for react
 
 [![NPM](https://img.shields.io/npm/v/react-chip-input.svg)](https://www.npmjs.com/package/react-chip-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Deployed on Github Pages](https://img.shields.io/badge/github--pages-online-blue.svg)](https://shhdharmen.github.io/react-chip-input/ "Deployed on Github Pages")
 
 ## Pre-requisitions
 
