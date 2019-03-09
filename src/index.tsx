@@ -56,8 +56,8 @@ export default class ReactChipInput extends React.Component<Props> {
     this.formControlRef.current.focus();
   };
   /**This is needed, as chips array will get changed frequently. */
-  componentWillReceiveProps(nextProps: Props) {
-    if (this.props.chips.length < nextProps.chips.length) {
+  componentDidUpdate(prevProps: Readonly<Props>) {
+    if (prevProps.chips.length !== this.props.chips.length) {
       this.formControlRef.current.value = '';
     }
   }
@@ -73,7 +73,7 @@ export default class ReactChipInput extends React.Component<Props> {
         ].join(' ')}
       >
         <Row className="align-items-center" noGutters>
-        {/* Each chip is bootstrap's col */}
+          {/* Each chip is bootstrap's col */}
           {this.props.chips.map((chip, index) => (
             <Col xs="auto" className="p-2" key={index}>
               <div
@@ -94,7 +94,7 @@ export default class ReactChipInput extends React.Component<Props> {
             </Col>
           ))}
           <Col xs>
-          {/* The input, from which value is read and chip is added accordingly */}
+            {/* The input, from which value is read and chip is added accordingly */}
             <Form
               className="custom-form-control"
               onSubmit={(e: any) => {

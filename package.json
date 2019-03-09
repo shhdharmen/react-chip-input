@@ -1,11 +1,16 @@
 {
   "name": "react-chip-input",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Chip input for react, based on react-bootstrap",
   "author": "shhdharmen",
   "license": "MIT",
   "repository": "shhdharmen/react-chip-input",
-  "keywords": ["react", "chip-input", "react-bootstrap", "bootstrap"],
+  "keywords": [
+    "react",
+    "chip-input",
+    "react-bootstrap",
+    "bootstrap"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

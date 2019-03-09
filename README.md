@@ -1,9 +1,11 @@
 # react-chip-input
 
-> Chip input for react
+> Chip input for react, based on react-bootstrap
 
-[![NPM](https://img.shields.io/npm/v/react-chip-input.svg)](https://www.npmjs.com/package/react-chip-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-chip-input.svg)](https://www.npmjs.com/package/react-chip-input)
 [![Deployed on Github Pages](https://img.shields.io/badge/github--pages-online-blue.svg)](https://shhdharmen.github.io/react-chip-input/ "Deployed on Github Pages")
+
+![GIF Example](./chrome-capture.gif)
 
 ## Pre-requisitions
 
