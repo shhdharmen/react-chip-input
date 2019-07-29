@@ -1,7 +1,7 @@
 {
   "name": "react-chip-input-example",
   "homepage": "https://shhdharmen.github.io/react-chip-input",
-  "version": "0.0.0",
+  "version": "1.0.3",
   "license": "MIT",
   "private": true,
   "dependencies": {
