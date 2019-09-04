@@ -24,6 +24,6 @@ jobs:
     - name: Deploy in Github Pages
       run: |
         yarn --silent
-        yarn run delpoy
+        yarn run deploy
       env:
         CI: true
