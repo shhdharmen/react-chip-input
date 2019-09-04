@@ -25,6 +25,6 @@ jobs:
       run: |
         yarn
         yarn predeploy
-        npm delpoy
+        yarn delpoy
       env:
         CI: true
