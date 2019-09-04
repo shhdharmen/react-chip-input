@@ -12,8 +12,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: 10.x
-        yarn-version: 1.17.x
+        node-version: stable
+        yarn-version: stable
 
     steps:
     - uses: actions/checkout@v1
