@@ -26,7 +26,7 @@
     "start": "rollup -c -w",
     "prepare": "yarn build",
     "predeploy": "cd example && yarn install && yarn build",
-    "deploy": "gh-pages -d example/build --user 'shhdharmen <shhdharmen@gmail.com>'",
+    "deploy": "gh-pages -d example/build --user 'Dharmen Shah <shhdharmen@gmail.com>'",
     "gh-pages-help": "gh-pages --help"
   },
   "dependencies": {

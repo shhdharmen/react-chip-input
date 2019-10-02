@@ -1,4 +1,4 @@
-name: Node CI
+name: Deploy to Github Pages
 
 on:
   push:
@@ -20,10 +20,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Deploy in Github Pages
+      - name: Predeploy
         run: |
           yarn --silent
-          yarn run deploy
         env:
           CI: true
-          GH_TOKEN: ${{ secrets.DEPLOY_GH_PAGES_TOKEN }}
+      - name: GitHub Pages Deploy
+        uses: maxheld83/ghpages@v0.2.1
+        env:
+          BUILD_DIR: "example/build"
+        secrets: ["DEPLOY_GH_PAGES_TOKEN"]
