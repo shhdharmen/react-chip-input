@@ -29,4 +29,4 @@ jobs:
         uses: maxheld83/ghpages@v0.2.1
         env:
           BUILD_DIR: "example/build"
-        secret: ["DEPLOY_GH_PAGES_TOKEN"]
+          GH_TOKEN: ${{ secrets.DEPLOY_GH_PAGES_TOKEN }}
