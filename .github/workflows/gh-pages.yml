@@ -1,32 +1,20 @@
-name: Deploy to Github Pages
-
-on:
-  push:
-    branches:
-      - master
-
+name: Build and Deploy
+on: [push]
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-        yarn-version: [1.19.x]
-
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@master
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Predeploy
-        run: |
-          yarn --silent
+          node-version: 12
+          yarn-version: 1.19.x
         env:
-          CI: true
-      - name: GitHub Pages Deploy
-        uses: maxheld83/ghpages@v0.2.1
-        env:
-          BUILD_DIR: "example/build"
-          GH_TOKEN: ${{ secrets.DEPLOY_GH_PAGES_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.DEPLOY_GH_PAGES_TOKEN }}
+          BASE_BRANCH: master # The branch the action should deploy from.
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: example/build # The folder the action should deploy.
+          BUILD_SCRIPT: yarn --silent && yarn build # The build script the action should run prior to deploying.
