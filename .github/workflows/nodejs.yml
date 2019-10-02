@@ -26,4 +26,4 @@ jobs:
           yarn run deploy
         env:
           CI: true
-          GH_TOKEN: { secrets.DEPLOY_GH_PAGES_TOKEN }
+          GH_TOKEN: ${{ secrets.DEPLOY_GH_PAGES_TOKEN }}
