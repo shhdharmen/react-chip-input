@@ -28,6 +28,8 @@ jobs:
           yarn-version: 1.19.x
           registry-url: https://npm.pkg.github.com/
           scope: "@shhdharmen"
-      - run: npm publish
+      - run: |
+        yarn --silent
+        npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GH_NODE_AUTH_TOKEN}}
