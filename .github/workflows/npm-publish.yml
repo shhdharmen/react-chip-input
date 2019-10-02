@@ -13,8 +13,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+          yarn-version: 1.19.x
           registry-url: https://registry.npmjs.org/
-      - run: npm publish
+      - run: |
+          yarn --silent
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets. NPM_AUTH_TOKEN}}
 
