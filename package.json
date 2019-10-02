@@ -1,6 +1,6 @@
 {
   "name": "react-chip-input",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Chip input for react, based on react-bootstrap",
   "author": "shhdharmen",
   "license": "MIT",
@@ -26,7 +26,8 @@
     "start": "rollup -c -w",
     "prepare": "yarn build",
     "predeploy": "cd example && yarn install && yarn build",
-    "deploy": "gh-pages -d example/build --name='Dharmen Shah' --email=shhdharmen@gmail.com"
+    "deploy": "gh-pages -d example/build --user 'Dharmen Shah <shhdharmen@gmail.com>'",
+    "gh-pages-help": "gh-pages --help"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -45,7 +46,7 @@
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",

@@ -1,82 +1,92 @@
 @keyframes move-left {
-    from {
-        transform: translateX(10px);
-    }
-    to {
-        transform: translateX(0px);
-    }
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 
 @keyframes move-left-in {
-    from {
-        transform: translateX(10px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0px);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes move-right-out {
-    from {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(-10px);
-        opacity: 0;
-    }
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
 }
 
 .chip-input {
-    transition: border 0.15s linear, box-shadow 0.15s linear;
+  box-shadow: 0 0 0 0.2rem transparent;
+  border: 1px solid transparent;
+  transition: border 0.15s linear, box-shadow 0.15s linear;
 }
 
 .chip-input .chip {
-    transform: translateX(10px);
-    opacity: 0;
-    padding: 2px 4px 3px 8px;
-    border: 1px solid var(--react-chip-input__chip-border-color, var(--primary, blue));
-    border-radius: 16px;
-    height: 32px;
-    transition: box-shadow 0.15s linear, background-color 0.15s linear;
+  transform: translateX(10px);
+  opacity: 0;
+  padding: 2px 4px 3px 8px;
+  border: 1px solid
+    var(--react-chip-input__chip-border-color, var(--gray, rgba(0, 0, 0, 0.25)));
+  border-radius: 16px;
+  height: 32px;
+  background-color: var(--react-chip-input__chip-bg-color, #eaeaea);
+  transition: box-shadow 0.15s linear, background-color 0.15s linear,
+    border 0.15s linear;
 }
 
 .chip-input .chip:hover,
 .chip-input .chip:focus,
 .chip-input .chip:active {
-    background-color: var(--react-chip-input__chip-hover-color, rgba(0, 0, 0, 0.05));
+  border-color: var(
+    --react-chip-input__chip-hover-border-color,
+    var(--dark, rgba(0, 0, 0, 0.5))
+  );
+  background-color: var(--react-chip-input__chip-hover-bg-color, #dedede);
 }
 
 .chip-input .chip.show {
-    animation: move-left-in 0.25s ease-in-out forwards;
+  animation: move-left-in 0.25s ease-in-out forwards;
 }
 
 .chip-input .chip.hide {
-    animation: move-right-out 0.25s ease-in-out forwards;
+  animation: move-right-out 0.25s ease-in-out forwards;
 }
 
 .chip-input .chip svg {
-    transition: height 0.15s linear, width 0.15s linear;
-    transform: scale(0.8);
-    margin-top: -2px;
+  transition: height 0.15s linear, width 0.15s linear;
+  transform: scale(0.8);
+  margin-top: -2px;
 }
 
 .chip-input .chip svg:hover,
 .chip-input .chip svg:focus,
 .chip-input .chip svg:active {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .no-focus:focus {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .shadow-primary {
-    box-shadow: 0 0 0 0.2rem var(--react-chip-input__box-shadow-color, var(--primary, blue));
+  box-shadow: 0 0 0 0.2rem
+    var(--react-chip-input__box-shadow-color, var(--primary, blue));
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }

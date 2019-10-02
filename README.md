@@ -22,9 +22,9 @@ yarn add react-chip-input
 ## Usage
 
 ```tsx
-import * as React from 'react';
+import * as React from "react";
 
-import ReactChipInput from 'react-chip-input';
+import ReactChipInput from "react-chip-input";
 
 class Example extends React.Component {
   state = {
@@ -56,11 +56,15 @@ class Example extends React.Component {
 ## Style Variables
 
 ```css
-/* Chip border color, defaults to bootstrap's var --primary */
+/* Chip background color, fallbacks to #eaeaea */
+--react-chip-input__chip-bg-color
+/* Chip border color, fallbacks to bootstrap's var --gray to rgba(0, 0, 0, 0.25) */
 --react-chip-input__chip-border-color
-/* Chip :hover, :active, :focus background color, defaults to rgba(0, 0, 0, 0.05) */
---react-chip-input__chip-hover-color
-/* Box shadow color, when active, defaults to bootstrap's var --primary */
+/* Chip :hover, :active, :focus background color, fallbacks to #dedede */
+--react-chip-input__chip-hover-bg-color
+/* Chip :hover, :active, :focus border color, fallbacks bootstrap's var --dark to rgba(0, 0, 0, 0.05) */
+--react-chip-input__chip-hover-border-color
+/* Box shadow color, when active, fallbacks to bootstrap's var --primary to blue */
 --react-chip-input__box-shadow-color
 ```
 
