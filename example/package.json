@@ -1,7 +1,7 @@
 {
   "name": "react-chip-input-example",
   "homepage": "https://shhdharmen.github.io/react-chip-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -11,16 +11,12 @@
     "react-bootstrap": "^1.0.0-beta.5",
     "react-chip-input": "link:..",
     "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4",
-    "snyk": "^1.189.0"
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
-  },
-  "snyk": true
+    "eject": "react-scripts eject"
+  }
 }

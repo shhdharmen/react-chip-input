@@ -1,6 +1,6 @@
 {
   "name": "react-chip-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Chip input for react, based on react-bootstrap",
   "author": "shhdharmen",
   "license": "MIT",
@@ -9,7 +9,8 @@
     "react",
     "chip-input",
     "react-bootstrap",
-    "bootstrap"
+    "bootstrap",
+    "react-chip-input"
   ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -23,9 +24,9 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "prepare": "yarn build",
+    "predeploy": "cd example && yarn install && yarn build",
+    "deploy": "gh-pages -d example/build --name='Dharmen Shah' --email=shhdharmen@gmail.com"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
