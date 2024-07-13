@@ -30,7 +30,7 @@
     "gh-pages-help": "gh-pages --help"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "react-bootstrap": "^1.0.0"
   },
   "peerDependencies": {
